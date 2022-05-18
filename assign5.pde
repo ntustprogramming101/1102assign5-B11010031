@@ -317,6 +317,9 @@ void draw() {
     if(isHit(clockX[i], clockY[i], SOIL_SIZE, SOIL_SIZE, playerX,  playerY , SOIL_SIZE, SOIL_SIZE)){
 
      addTime(CLOCK_BONUS_SECONDS);
+    
+    clockX[i] = clockY[i] = -1000;
+     
 
       }
     }
@@ -568,9 +571,7 @@ String convertFrameToTimeString(int frames){
   }
 
 void addTime(float seconds){					// Requirement #2
-    for(int i = 0; i < clockX.length; i++){
-    clockX[i] = clockY[i] = -1000;
-     }
+
      gameTimer += round(seconds * 60);
   }
 
